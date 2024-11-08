@@ -307,7 +307,7 @@ function displayQuestion() {
             question.classList.add("hidden");
         });
         question[c].classList.remove("hidden");
-        startTimer(c);
+        // startTimer(c);
         c++;
     } else {
         c = 0 ;
@@ -318,13 +318,9 @@ function displayQuestion() {
         const scoreSection = document.getElementById("scoreSection");
         scoreSection.classList.remove("hidden");
         const scoreTitle = document.getElementById("scoreResult");
-        // const spanNumber = document.getElementById("questionNumber");
-        // const questionNumber = questionsObjet.length + 1;
-
 
 		const score = localStorage.getItem("score");
 		scoreTitle.innerHTML = `${score}`;
-		// spanNumber.innerHTML = `${questionNumber}`;
 
     }
 }
@@ -447,31 +443,31 @@ function ResultRapport() {
 
 
 
-function startTimer(i) {
-    let timeLeft = 20;
-    const countdown = document.getElementsByClassName("countdown");
+// function startTimer(i) {
+//     let timeLeft = 20;
+//     const countdown = document.getElementsByClassName("countdown");
 
-    function updateTimer() {
-        const minutes = String(Math.floor(timeLeft / 60)).padStart(2, '0');
-        const seconds = String(timeLeft % 60).padStart(2, '0');
-        for(let i = 0 ; i < countdown.length ; i++){
-            countdown[i].value = `${minutes}:${seconds}`;
-        }
+//     function updateTimer() {
+//         const minutes = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+//         const seconds = String(timeLeft % 60).padStart(2, '0');
+//         for(let i = 0 ; i < countdown.length ; i++){
+//             countdown[i].value = `${minutes}:${seconds}`;
+//         }
         
-        timeLeft--; 
+//         timeLeft--; 
 
-        if (timeLeft <= 0) {
-            clearInterval(timerInterval); 
-            for(let i = 0 ; i < countdown.length ; i++){
-                countdown[i].value = "00:00";
-            }
-            ButtonNextQuestion(i,true);
-        }
-    }
+//         if (timeLeft <= 0) {
+//             clearInterval(timerInterval); 
+//             for(let i = 0 ; i < countdown.length ; i++){
+//                 countdown[i].value = "00:00";
+//             }
+//             ButtonNextQuestion(i,true);
+//         }
+//     }
 
-    updateTimer();
-    const timerInterval = setInterval(updateTimer, 1000);
-}
+//     updateTimer();
+//     const timerInterval = setInterval(updateTimer, 1000);
+// }
 
 
 
